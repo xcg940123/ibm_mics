@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="/css/login.css" />
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/getValue3.js"></script>
+<style type="text/css">
+body {
+    text-align: center;
+    background: #F7FAFC;
+    overflow: hidden;
+    background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+}
+html{
+	height: 100%;
+}
+</style>
+</head>
+<body>
+    <section class="navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="nav nav-pills">
+                        <li role="presentation" class="col-sm-3 abled"><a
+                            href="/user/configure">当前理赔申请</a></li>
+                        <li role="presentation" class="col-sm-3 abled"><a
+                            href="/user/buy">保险</a></li>
+                        <li role="presentation" class="col-sm-3 abled"><a href="#">个人主页</a>
+                        </li>
+                        <li role="presentation" class="col-sm-3 abled"><a
+                            href="/user/login">登陆</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <form>
+    	<input type="text" class="form-control" id="name" name="name" placeholder="请输入名称" style="width:120px;display:inline-block" />
+   		<input type="text" class="form-control" id="number" name="number" placeholder="请输入身份证号码" style="width:150px;margin-left:15px;display:inline-block" />
+		<a class="btn btn-primary" style="margin-left: 50px;margin-top: -3px;" id="hh">请求数据</a>
+    </form>
+    
+
+	<table class="table table-striped" style="margin-top:50px">
+    	<thead>
+    	<tr>
+			<td class="info">保险种类</td>
+        	<td class="active">被保人姓名</td>
+        	<td class="success">开始日期</td>
+        	<td class="warning">截止日期</td>
+    	</tr>	
+    	</thead>
+    	<tbody id="workerList">
+    	</tbody>
+	</table>
+</body>
+</html>

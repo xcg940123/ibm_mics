@@ -1,0 +1,5 @@
+package cn.mics.brank.sdk;
+
+public class checkChaincode {
+
+}

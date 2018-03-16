@@ -1,0 +1,25 @@
+$(document).ready(function(){
+	$("#searchButton").click(function(){
+		check = {};
+		check.searchName = $('input[name=orderedName]').val().replace(/(^\s*)|(\s*$)/g, "");
+		check.certifiNumber = $('input[name=certifiNumber]').val().replace(/(^\s*)|(\s*$)/g, "");
+		$.ajax({
+			type: 'post',
+			url:'/user/check',
+			data: check,
+			success: function(data){	
+//				$("#orderedName").text(data.orderedName);
+//				$("#orderstartDate").text(data.orderedName);
+//				console.log(data);
+				var str ="";
+				for(var i = 0;i<data.length;i++){
+					str+="<td>"+data[i].orderedName+"</td>";
+					str+="<td>"+data[i].birthday+"</td>";
+//					var s = data[i].kind1
+//					console.log(s);
+				}
+				$("#hh").append(str);
+			}
+		})
+	})
+})

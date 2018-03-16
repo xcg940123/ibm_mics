@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="cn.mics.brank.tes.First1"/>
+<fullyQualifiedTypeName name="cn.mics.brank.testutils.TestConfigHelper"/>
+<fullyQualifiedTypeName name="cn.mics.brank.fabric.entity.SampleUser"/>
+<fullyQualifiedTypeName name="cn.mics.brank.sdk.First"/>
+<fullyQualifiedTypeName name="cn.mics.brank.fabric.entity.SampleOrg"/>
+<fullyQualifiedTypeName name="cn.mics.brank.main.test.mainTest"/>
+</qualifiedTypeNameHistroy>

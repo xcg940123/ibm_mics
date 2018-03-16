@@ -1,0 +1,67 @@
+$(document).ready(function(){
+	$.ajax({
+		type: 'post',
+		url:'/user/check',
+		data: {},
+		success: function(data){	
+			var str ="";
+			var contaractDetail = new Array(data.length);
+			for(var i = 0;i<data.length;i++){
+				str+="<tr><td style=\"padding-top: 15px;\">"+data[i].contractName+"</td>";
+				str+="<td style=\"padding-top: 15px;\">"+data[i].orderedName+"</td>";
+				str+="<td style=\"padding-top: 15px;\">"+data[i].orderstartDate+"</td>";
+				str+="<td style=\"padding-top: 15px;\">"+data[i].orderendDate+"</td>";
+				str+="<td><a class=\"btn btn-primary detail\" style=\"margin-top: 3px;\">查看详情</a></td>";
+				str+="<td><a class=\"btn btn-primary apply\" style=\"margin-top: 3px;\">申请理赔</a></tr>"
+				contaractDetail[i] = data[i];
+			}
+			$("#list").append(str);
+			for(var i = 0;i<data.length;i++){
+				var apply = "apply"+i;
+				$("#list").children('tr').eq(i).children('td').eq(4).children('a').attr("id",i);
+				$("#list").children('tr').eq(i).children('td').eq(5).children('a').attr("id",apply);
+			}
+			$(".detail").click(function(){
+				var i = $(this).attr("id");
+				contract = {};
+				for(var key in contaractDetail[i]){
+					contract[key] = contaractDetail[i][key];
+				};
+				var detailContract = JSON.stringify(contract);
+				localStorage.setItem("合同详情",detailContract);
+				window.location.href = "./detail";
+			});
+			$(".apply").click(function(){
+				var i = $(this).parent().parent().find(".detail").attr("id");
+				contract = {};
+				for(var key in contaractDetail[i]){
+					contract[key] = contaractDetail[i][key];
+				};
+				var detailContract = JSON.stringify(contract);
+				localStorage.setItem("合同详情",detailContract);
+				$.ajax({
+					type: 'post',
+					data: contract,
+					url: '/user/apply',
+					success: function(data){
+						alert("申请成功");
+						console.log(data);
+					}
+				})
+			});
+		}
+	});
+	$("#searchButton").click(function(){
+		searchDate = {};
+		searchDate.searchName = $("input[name=orderedName]").val();
+		searchDate.cetifiNumber = $("input[name=cetifiNumber]").val();
+		$.ajax({
+			type: 'post',
+			data: searchDate,
+			url: '/user/checkDate',
+			success: function(data){
+				alert("success");
+				}
+		})
+	})
+})

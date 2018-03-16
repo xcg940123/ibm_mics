@@ -1,0 +1,51 @@
+package cn.mics.brank.main.test;
+
+import java.net.MalformedURLException;
+import java.util.Collection;
+import org.hyperledger.fabric.sdk.Channel;
+
+import cn.mics.brank.fabric.entity.SampleOrg;
+import cn.mics.brank.sdk.First;
+
+
+
+
+public class mainTest {
+	static First first=new First();
+	static Channel channel;
+	private static Collection<SampleOrg> testSampleOrgs;
+	String medicareID="";
+	public static void getInformation(String methodName,String contractID,String info,String medicareID="mae") {
+
+		 switch(methodName) {
+		   case "invoke": { 
+			   first.invokeapplication(channel,contractID,info);
+			   break;
+		   }
+		   case "query": {
+			   first.invokeapplication(channel,"22222","45678");
+			   first.queryapplication(channel,contractID);
+			   first.queryapplication(channel,contractID);
+			   break;
+		   }case "check": {
+			   first.invokeapplication(channel,"22222","45678");
+			   first.checkapplication(channel,contractID,);
+			   first.checkapplication(channel,contractID,);
+			   break;
+		   }
+		 }
+}
+	
+	public final static void ExcuteFirst() {
+		try {
+			testSampleOrgs=first.checkConfig();
+		} catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException
+				| MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		channel=first.setup(testSampleOrgs);
+		
+		first.clearConfig();
+	}
+}

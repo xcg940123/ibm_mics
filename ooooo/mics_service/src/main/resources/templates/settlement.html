@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>审核</title>
+<!--页头-静态资源-->
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="/css/bootstrap-datepicker3.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/settlement.css" />
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-button.css" />
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/js/get.js"></script> -->
+</head>
+
+<body>
+	<section class="navbar">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+                    <ul class="nav nav-pills">
+                        <li role="presentation" class="col-sm-3 abled"><a
+                            href="/user/configure">当前理赔申请</a></li>
+                        <li role="presentation" class="col-sm-3 abled"><a
+                            href="/user/buy">保险</a></li>
+                        <li role="presentation" class="col-sm-3 abled"><a href="#">个人主页</a>
+                        </li>
+                        <li role="presentation" class="col-sm-3 abled"><a
+                            href="/user/login">登陆</a></li>
+                    </ul>
+			</div>
+		</div>
+	</div>
+	</section>
+	<h2 style="font-family: verdana; font-size: 30px; color: #f63">
+		<strong>保险合同</strong>
+	</h2>
+
+	<h2 style="text-align: center; color: #f63">个人信息：</h2>
+
+	<div class="container">
+		<div class="col-md-12" style="height: auto; border: 1px solid #ccc">
+			<form action="/user/saveMedicalCare" method="post">
+				<div class="row">
+					<div class="col-md-4">
+						<label>姓&#12288;&#12288;名：</label> <span></span>
+					</div>
+					<div class="col-md-4">
+						<label>证&#12288;&#12288;件：</label> <span></span>
+					</div>
+					<div class="col-md-4">
+						<label>证件号码：</label> <span></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<label>年&#12288;&#12288;龄：</label> <span></span>
+					</div>
+					<div class="col-md-4">
+						<label>性&#12288;&#12288;别：</label> <span></span>
+					</div>
+					<div class="col-md-4">
+						<label>范&#12288;&#12288;围：</label> <span></span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<h2 style="text-align: center; color: #f63">系统匹配结果：</h2>
+	<div class="container">
+		<div class="row" style="margin-top: 25px">
+			<div class="col-md-12">
+				<label>是否符合理赔标准：</label>
+				<select name="result">
+					<option value="1" selected="selected">否</option>
+					<option value="2">是</option>
+				</select>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 25px">
+			<div class="col-md-12">
+				<label>理赔结果：</label>
+				<textarea style="width: 100%; height: 50px; border: 1px solid black"></textarea>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 25px">
+			<div class="col-md-12">
+				<label>理赔金额：</label>
+				<textarea style="width: 100%; height: 50px; border: 1px solid black"></textarea>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 25px">
+			<div class="col-md-12">
+				<label>理赔条款：</label>
+				<textarea style="width: 100%; height: 50px; border: 1px solid black"></textarea>
+			</div>
+		</div>
+	</div>
+
+	<button class="button button-3d button-royal"
+		style="margin: 50px 20% 50px 0; float: right;" type="submit">确认同意理赔</button>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>注册</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="/css/login.css" />
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/filter.js"></script>
+	<style type="text/css">
+		html {
+			height: 100%;
+		}
+		body{
+			text-align: center;
+			background: #F7FAFC;
+			overflow: hidden;
+			background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+			}
+	</style>
+</head>
+<body>
+	<section class="navbar">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="nav nav-pills">
+					   <li role="presentation" class="col-sm-3 abled">
+					   	  <a href="/user/index">主页</a>
+					   </li>
+					   <li role="presentation" class="col-sm-3 abled">
+					   	  <a href="/user/buy">保险</a>
+					   </li>
+					   <li role="presentation" class="col-sm-3 abled">
+					   	  <a href="/user/information">个人主页</a>
+					   </li>
+					   <li role="presentation" class="col-sm-3 abled">
+					   	  <a href="/user/login">登陆</a>
+					   </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div style="position: absolute;margin:0 auto;height: 100%;width: 100%">
+		<div class="container">
+			<h1>Welcome</h1>
+			<form class="form" id="regForm">
+				<input id="inputName" type="text" placeholder="Username" name="username" /><label style="width:100px;display:none" id="configure"></label>
+				<input id="inputPsd" type="password" placeholder="Password" name="password" />
+				<input id="inputPsd2" type="password" placeholder="Password Confirm" name="password2" />
+				<a id="regButton">Register</a>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

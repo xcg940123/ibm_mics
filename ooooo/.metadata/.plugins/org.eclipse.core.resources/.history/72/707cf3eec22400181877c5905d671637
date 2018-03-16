@@ -1,0 +1,54 @@
+package cn.mics.brank.main.test;
+
+import java.net.MalformedURLException;
+import java.util.Collection;
+
+import org.hyperledger.fabric.sdk.ChaincodeID;
+import org.hyperledger.fabric.sdk.Channel;
+import org.hyperledger.fabric.sdk.HFClient;
+import org.hyperledger.fabric.sdk.ProposalResponse;
+
+import cn.mics.brank.fabric.entity.SampleOrg;
+import cn.mics.brank.sdk.First;
+
+
+
+
+public class mainTest {
+	static First first=new First();
+	static Channel fooChannel;
+	private static Collection<SampleOrg> testSampleOrgs;
+	private static Collection<ProposalResponse> successful;
+	private static Collection<ProposalResponse> failed;
+	private static ChaincodeID chaincodeID;
+	private static SampleOrg sampleOrg;
+	private static HFClient client;
+	public void getInformation(String methodName,String ID,String info) {
+
+		 switch(methodName) {
+		   case "invoke": { 
+			   first.invokeapplication(fooChannel,ID,info);
+			   break;
+		   }
+		   case "query": {
+			   first.invokeapplication(fooChannel,"22222","45678");
+			   first.queryapplication(fooChannel,ID);
+			   first.queryapplication(fooChannel,ID);
+			   break;
+		   }
+		 }
+}
+	
+	public final static void ExcuteFirst() {
+		try {
+			testSampleOrgs=first.checkConfig();
+		} catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException
+				| MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		fooChannel=first.setup(testSampleOrgs);
+		
+		first.clearConfig();
+	}
+}
